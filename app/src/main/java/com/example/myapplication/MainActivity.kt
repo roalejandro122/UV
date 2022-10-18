@@ -18,17 +18,22 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        var textoemail = findViewById<EditText>(R.id.Ingresoemail)
+
+        //Cambios de ubicacion variables
+
+        val textoemail = findViewById<EditText>(R.id.Ingresoemail)
+        val botonacceder = findViewById<Button>(R.id.buttonlogin)
+        var passwordlogin = findViewById<EditText>(R.id.password)
+        val registrarcuenta = findViewById<Button>(R.id.registrar)
+
         textoemail.setOnClickListener {
             Toast.makeText(this, textoemail.text, Toast.LENGTH_LONG).show()
         }
 
-        var botonacceder = findViewById<Button>(R.id.buttonlogin)
         botonacceder.setOnClickListener {
             Toast.makeText(this,"hola "+textoemail.text, Toast.LENGTH_LONG).show()
         }
-        var passwordlogin = findViewById<EditText>(R.id.password)
-        var registrarcuenta = findViewById<Button>(R.id.registrar)
+
         registrarcuenta.setOnClickListener {
             val iActHome = Intent(this, HomeActivity::class.java)
             startActivity(iActHome)
